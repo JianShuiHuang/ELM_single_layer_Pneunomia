@@ -33,10 +33,10 @@ def DataLoader(mode):
             train_data[i] = img_np.flatten()
             train_label[i] = train_dataset.imgs[i][1]         
             
-            state = np.random.get_state()
-            np.random.shuffle(train_data)
-            np.random.set_state(state)
-            np.random.shuffle(train_label)
+        state = np.random.get_state()
+        np.random.shuffle(train_data)
+        np.random.set_state(state)
+        np.random.shuffle(train_label)
             
         return train_data, train_label
     
