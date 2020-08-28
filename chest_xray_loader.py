@@ -57,7 +57,12 @@ def DataLoader(mode):
             img_np = np.transpose(img_np, (2,0,1))
 
             test_data[i] = img_np.flatten()
-            test_label[i] = test_dataset.imgs[i][1]         
+            test_label[i] = test_dataset.imgs[i][1]    
+        
+        state = np.random.get_state()
+        np.random.shuffle(test_data)
+        np.random.set_state(state)
+        np.random.shuffle(test_label)
             
             
         return test_data, test_label
