@@ -28,10 +28,15 @@ def DataLoader(mode):
             img = img.convert('RGB')
             
             img_np = np.asarray(img)/255
-            
+            img_np = np.transpose(img_np, (2,0,1))
+
             train_data[i] = img_np.flatten()
             train_label[i] = train_dataset.imgs[i][1]         
             
+            state = np.random.get_state()
+            np.random.shuffle(train_data)
+            np.random.set_state(state)
+            np.random.shuffle(train_label)
             
         return train_data, train_label
     
@@ -49,7 +54,9 @@ def DataLoader(mode):
             img = img.convert('RGB')
             
             img_np = np.asarray(img)/255
-            
+            img_np = np.
+            img_np = np.transpose(img_np, (2,0,1))
+
             test_data[i] = img_np.flatten()
             test_label[i] = test_dataset.imgs[i][1]         
             
