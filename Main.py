@@ -37,7 +37,7 @@ print("data load complet...")
 ##ELM parameters
 input_size = 3 * 64 * 64
 output_size = 2
-hidden_size = 1000
+hidden_size = 
 
 ##create ELM model
 model = ELM(input_size, output_size, hidden_size)
